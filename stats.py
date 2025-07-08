@@ -9,3 +9,15 @@ def get_word_count(path):
     split_file = file.split()
     words = len(split_file)
     print(f"{words} words found in the document")
+
+def get_characters(path):
+    file = get_book_text(path)
+    file_lowercase = file.lower()
+    characters = list(file_lowercase)
+    character_numbers = {}
+    for letter in characters:
+        if letter not in character_numbers:
+            character_numbers[letter]=0
+        character_numbers[letter] +=1
+    print (character_numbers)
+    return
