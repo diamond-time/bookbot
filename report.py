@@ -9,7 +9,7 @@ def report(path):
     print(f"Found {words} total words")
     print("--------- Character Count -------")   
     for entry in fix_dict(path):
-        if entry{1}.isalpha():
-            print(f"{entry{1}}: {entry{2}}")
+        if entry["char"].isalpha():
+            print(f"{entry["char"]}: {entry["num"]}")
     
     print("============= END ===============")
