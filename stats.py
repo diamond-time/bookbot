@@ -22,16 +22,18 @@ def get_char_nums(path):
     return character_nums
 
 def fix_dict(path):
-    fixed_dict = {}
+    fixed_dict = []
     char_counts = get_char_nums(path)
     for letter, amount in char_counts.items():
-        print(f"Letter is {letter} and amount is {amount}")
-        #fixed_dict.add({"char":{letter}, "num":{amount}})
-    print(fixed_dict)
+        #print(f"Letter is {letter} and amount is {amount}")
+        fixed_dict.append({"char":letter, "num":amount})
+    fixed_dict.sort(reverse=True, key=sort_on)
+    return fixed_dict
+
 
 
 def sort_on(char):
-    return char[1]
+    return char["num"]
 
 def sort_char_nums(path):
     nums = get_char_nums(path)
