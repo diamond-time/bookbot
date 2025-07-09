@@ -10,14 +10,34 @@ def get_word_count(path):
     words = len(split_file)
     print(f"{words} words found in the document")
 
-def get_characters(path):
+def get_char_nums(path):
     file = get_book_text(path)
     file_lowercase = file.lower()
     characters = list(file_lowercase)
-    character_numbers = {}
+    character_nums = {}
     for letter in characters:
-        if letter not in character_numbers:
-            character_numbers[letter]=0
-        character_numbers[letter] +=1
-    print (character_numbers)
+        if letter not in character_nums:
+            character_nums[letter]=0
+        character_nums[letter] +=1
+    return character_nums
+
+def fix_dict(path):
+    fixed_dict = {}
+    char_counts = get_char_nums(path)
+    for letter, amount in char_counts.items():
+        print(f"Letter is {letter} and amount is {amount}")
+        #fixed_dict.add({"char":{letter}, "num":{amount}})
+    print(fixed_dict)
+
+
+def sort_on(char):
+    return char[1]
+
+def sort_char_nums(path):
+    nums = get_char_nums(path)
+    sorted_chars = sorted(nums.values())
+    print(sorted_chars)
+    return 
+
+def updated_dict(dict):
     return
