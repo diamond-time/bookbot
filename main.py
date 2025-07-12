@@ -1,4 +1,4 @@
-
+import sys
 from stats import get_book_text
 from stats import get_word_count
 from stats import get_char_nums
@@ -8,6 +8,8 @@ from stats import fix_dict
 from report import report
 
 def main():
-    report("./books/frankenstein.txt")
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+    report(sys.argv(1))
 
 main()
