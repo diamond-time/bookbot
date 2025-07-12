@@ -9,7 +9,9 @@ from report import report
 
 def main():
     print("Usage: python3 main.py <path_to_book>")
-    sys.exit(1)
-    report(sys.argv(1))
+    #print(sys.argv[1])
+    if len(sys.argv) !=2:
+        sys.exit(1)
+    report(sys.argv[1])
 
 main()
